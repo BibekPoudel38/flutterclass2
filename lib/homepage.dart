@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'my_container.dart';
+
 class Homepage extends StatelessWidget {
   const Homepage({Key? key}) : super(key: key);
 
@@ -10,7 +12,9 @@ class Homepage extends StatelessWidget {
         title: const Text("Homepage"),
         centerTitle: false,
       ),
-      drawer: const Drawer(),
+      drawer: const Drawer(
+        child: MyContainer(),
+      ),
       // body: const Text(
       //   "Hello! my name is something someone.",
       //   maxLines: 1,
@@ -21,46 +25,59 @@ class Homepage extends StatelessWidget {
       //     fontWeight: FontWeight.bold,
       //   ),
       // ),
+      // body: Container(
+      //   color: Colors.blue,
+      //   // height: 100,
+      //   // width: 200,
+      //   child: const Center(
+      //     child: MyContainer(
+      //       text: "Hi from body",
+      //       height: 120,
+      //       radius: 180,
+      //     ),
+      //   ),
+      // ),
+
       body: Container(
         color: Colors.blue,
-        // height: 100,
-        // width: 200,
-        child: Center(
-          child: Card(
-            elevation: 10,
-            child: Container(
-              height: 450,
-              width: 250,
-              decoration: BoxDecoration(
-                color: Colors.yellow,
-                borderRadius: BorderRadius.circular(16),
-                // shape: BoxShape.circle,
-                gradient: const LinearGradient(
-                  colors: [
-                    Colors.red,
-                    Colors.orange,
-                    Colors.yellow,
-                  ],
-                  begin: Alignment.topCenter,
-                  end: Alignment.bottomCenter,
-                ),
-              ),
-              child: const Center(child: Text("Hello World")),
-            ),
-          ),
+        // height: 600,
+        // wrap takes elements to next line
+        // child: ListView(
+        //   // spacing: 50,
+        //   // runSpacing: 50,
+        //   // direction: Axis.vertical,
+        //   // crossAxisAlignment: CrossAxisAlignment.end,
+        //   // mainAxisAlignment: MainAxisAlignment.start,
+        //   children: [
+        //     for (int i = 0; i < 10; i++)
+        //       MyContainer(
+        //         radius: 12,
+        //         height: 12,
+        //         text: "Hello $i",
+        //       ),
+        //   ],
+        // ),
+        child: ListView.builder(
+          physics: const BouncingScrollPhysics(),
+          itemCount: 50,
+          // reverse: true,
+          itemBuilder: (context, index) {
+            return const MyContainer();
+          },
         ),
       ),
-      floatingActionButton: FloatingActionButton.small(
+
+      floatingActionButton: FloatingActionButton.extended(
         onPressed: () {
           print("Hello world");
         },
-        // label: const Text("press here"),
-        child: Icon(
-          Icons.home_rounded,
-          color: Colors.red.shade700,
-          size: 30,
-          // semanticLabel: "Add button",
-        ),
+        label: const Text("press here"),
+        // icon: Icon(
+        //   Icons.home_rounded,
+        //   color: Colors.red.shade700,
+        //   size: 30,
+        //   // semanticLabel: "Add button",
+        // ),
       ),
     );
   }
