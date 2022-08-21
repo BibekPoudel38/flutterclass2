@@ -1,5 +1,5 @@
 // import 'package:day2/homepage.dart';
-import 'package:day2/single_child_scroll_view.dart';
+import 'samsung_widget.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -31,7 +31,7 @@ class MyApp extends StatelessWidget {
       // home: MyColumnWidget(),
       // home: MyListWidget(),
       // home: MyListBuilderWidget(),
-      home: const MySingleChildScrollWidget(),
+      home: const SamsungWidget(),
     );
   }
 }
