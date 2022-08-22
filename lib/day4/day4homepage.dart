@@ -1,7 +1,7 @@
 import 'dart:developer';
 
-import 'package:day2/day3/samsung_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:marquee/marquee.dart';
 
 class Day4Homepage extends StatefulWidget {
   const Day4Homepage({Key? key}) : super(key: key);
@@ -41,7 +41,38 @@ class _Day4HomepageState extends State<Day4Homepage> {
               ),
             ),
             Switch(value: darkMode, onChanged: changeTheme),
-            const SamsungWidget(),
+            SizedBox(
+              height: 50,
+              child: Marquee(
+                text: 'Some sample text that takes some space.',
+                style: const TextStyle(fontWeight: FontWeight.bold),
+                scrollAxis: Axis.horizontal,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                blankSpace: 20.0,
+                velocity: 100.0,
+                pauseAfterRound: const Duration(seconds: 1),
+                startPadding: 10.0,
+                accelerationDuration: const Duration(seconds: 1),
+                accelerationCurve: Curves.linear,
+                decelerationDuration: const Duration(milliseconds: 500),
+                decelerationCurve: Curves.easeOut,
+              ),
+            ),
+            const TextField(),
+            TextFormField(
+              // obscureText: true,
+              decoration: InputDecoration(
+                hintText: "Enter email address",
+                suffixIcon: IconButton(
+                  onPressed: () {},
+                  icon: const Icon(Icons.visibility),
+                ),
+                fillColor: Colors.red,
+                filled: true,
+              ),
+              keyboardType: TextInputType.number,
+              textInputAction: TextInputAction.search,
+            ),
           ],
         ),
       ),

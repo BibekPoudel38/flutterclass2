@@ -1,7 +1,8 @@
 // import 'package:day2/homepage.dart';
 
-import 'package:day2/day3/samsung_widget.dart';
 import 'package:flutter/material.dart';
+
+import 'day4/day4homepage.dart';
 
 void main() {
   runApp(const MyApp());
@@ -32,7 +33,7 @@ class MyApp extends StatelessWidget {
       // home: MyColumnWidget(),
       // home: MyListWidget(),
       // home: MyListBuilderWidget(),
-      home: const SamsungWidget(),
+      home: const Day4Homepage(),
     );
   }
 }
