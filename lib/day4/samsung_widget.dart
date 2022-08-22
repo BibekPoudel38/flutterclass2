@@ -1,25 +1,13 @@
 import 'package:flutter/material.dart';
 
-class SamsungWidget extends StatefulWidget {
+class SamsungWidget extends StatelessWidget {
   const SamsungWidget({Key? key}) : super(key: key);
-
-  @override
-  State<SamsungWidget> createState() => _SamsungWidgetState();
-}
-
-class _SamsungWidgetState extends State<SamsungWidget> {
-  bool fav = false;
-  changeFav() {
-    fav = !fav;
-    setState(() {});
-  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text("My App")),
       body: Column(
-        mainAxisSize: MainAxisSize.min,
         children: [
           SizedBox(
             width: MediaQuery.of(context).size.width,
@@ -48,11 +36,11 @@ class _SamsungWidgetState extends State<SamsungWidget> {
                       title: const Text("Samsung 4k UHD tv"),
                       subtitle: const Text("Samsung electronics"),
                       trailing: IconButton(
-                        icon: Icon(
-                          fav ? Icons.favorite : Icons.favorite_outline,
-                          color: Colors.red,
+                        icon: const Icon(
+                          Icons.favorite_outline,
+                          color: Colors.pink,
                         ),
-                        onPressed: changeFav,
+                        onPressed: () {},
                       ),
                     ),
                     Padding(
